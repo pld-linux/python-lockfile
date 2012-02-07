@@ -47,6 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ACKS README RELEASE-NOTES
+%dir %{py_sitescriptdir}/lockfile
 %{py_sitescriptdir}/lockfile/*.py[co]
 %if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/lockfile-*.egg-info
