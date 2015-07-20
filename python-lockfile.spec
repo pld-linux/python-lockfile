@@ -1,12 +1,12 @@
 %define 	module	lockfile
 Summary:	Exports a LockFile class which provides a simple API for locking files
 Name:		python-%{module}
-Version:	0.9.1
+Version:	0.10.2
 Release:	1
 License:	MIT
 Group:		Development/Languages/Python
-Source0:	http://pylockfile.googlecode.com/files/%{module}-%{version}.tar.gz
-# Source0-md5:	4e4c7ea4c4301500da5e7f3b51e01cfe
+Source0:	https://github.com/openstack/pylockfile/archive/%{version}.tar.gz
+# Source0-md5:	649ec12618fb02b215c1421471c3e240
 URL:		http://pypi.python.org/pypi/lockfile
 BuildRequires:	python-distribute
 BuildRequires:	rpm-pythonprov
@@ -27,7 +27,7 @@ demonstration of the possibilities it provides than as
 production-quality code.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n pylockfile-%{version}
 
 %build
 %{__python} setup.py build
