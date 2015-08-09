@@ -9,6 +9,7 @@ Source0:	https://github.com/openstack/pylockfile/archive/%{version}.tar.gz
 # Source0-md5:	649ec12618fb02b215c1421471c3e240
 URL:		http://pypi.python.org/pypi/lockfile
 BuildRequires:	python-distribute
+BuildRequires:	python-pbr
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	python-modules
