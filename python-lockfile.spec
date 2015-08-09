@@ -31,6 +31,7 @@ production-quality code.
 %setup -q -n pylockfile-%{version}
 
 %build
+export PBR_VERSION=$(rpm -q --qf '%{VERSION}' python-pbr)
 %{__python} setup.py build
 
 %install
