@@ -35,6 +35,7 @@ production-quality code.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+export PBR_VERSION=$(rpm -q --qf '%{VERSION}' python-pbr)
 %{__python} setup.py install \
 	--skip-build \
 	--optimize=2 \
