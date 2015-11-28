@@ -32,15 +32,12 @@ production-quality code.
 
 %build
 export PBR_VERSION=$(rpm -q --qf '%{VERSION}' python-pbr)
-%{__python} setup.py build
+%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 export PBR_VERSION=$(rpm -q --qf '%{VERSION}' python-pbr)
-%{__python} setup.py install \
-	--skip-build \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py_install
 
 %py_postclean
 
