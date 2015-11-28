@@ -2,7 +2,7 @@
 Summary:	Exports a LockFile class which provides a simple API for locking files
 Name:		python-%{module}
 Version:	0.10.2
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Languages/Python
 Source0:	https://github.com/openstack/pylockfile/archive/%{version}.tar.gz
