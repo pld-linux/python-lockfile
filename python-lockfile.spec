@@ -11,7 +11,7 @@ URL:		http://pypi.python.org/pypi/lockfile
 BuildRequires:	python-distribute
 BuildRequires:	python-pbr
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 Requires:	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
