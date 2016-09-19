@@ -1,4 +1,5 @@
-
+#
+# Conditional build:
 %bcond_without  python2 # CPython 2.x module
 %bcond_without  python3 # CPython 3.x module
 
@@ -15,12 +16,12 @@ URL:		http://pypi.python.org/pypi/lockfile
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.710
 %if %{with python2}
-BuildRequires:	python-setuptools
 BuildRequires:	python-pbr
+BuildRequires:	python-setuptools
 %endif
 %if %{with python3}
-BuildRequires:	python3-setuptools
 BuildRequires:	python3-pbr
+BuildRequires:	python3-setuptools
 %endif
 Requires:	python-modules
 BuildArch:	noarch
@@ -39,8 +40,8 @@ production-quality code.
 
 %package -n python3-%{module}
 Summary:	Exports a LockFile class which provides a simple API for locking files
-Group:          Libraries/Python
-Requires:       python3-modules
+Group:		Libraries/Python
+Requires:	python3-modules
 
 %description -n python3-%{module}
 The lockfile package exports a LockFile class which provides a simple
@@ -85,17 +86,19 @@ export PBR_VERSION=$(rpm -q --qf '%{VERSION}' python3-pbr)
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%if %{with python2}
 %files
 %defattr(644,root,root,755)
 %doc ACKS README.rst RELEASE-NOTES
 %dir %{py_sitescriptdir}/lockfile
 %{py_sitescriptdir}/lockfile/*.py[co]
-%if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/lockfile-*.egg-info
 %endif
 
+%if %{with python3}
 %files -n python3-%{module}
 %defattr(644,root,root,755)
 %doc ACKS README.rst RELEASE-NOTES
 %{py3_sitescriptdir}/lockfile
 %{py3_sitescriptdir}/lockfile-*.egg-info
+%endif
